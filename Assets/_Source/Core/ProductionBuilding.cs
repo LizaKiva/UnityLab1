@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProductionBuilding : MonoBehaviour
+namespace Assets._Source.Core
 {
-    // Start is called before the first frame update
-    void Start()
+    public class ProductionBuilding : MonoBehaviour
     {
-        
-    }
+        public float productionTime;
+        [SerializeField] Assets._Source.Core.GameResource resource;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        [SerializeField] Assets._Source.Core.RecourceBank bank;
+
+        public IEnumerator ProductionResourceCoroutine()
+        {
+            bank.ChangeRecources(resource, 1);
+            yield return new WaitForSeconds(productionTime);
+        }
     }
 }
