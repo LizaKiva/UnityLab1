@@ -6,7 +6,7 @@ namespace Assets._Source.Presentation
 {
     public class GameManager : MonoBehaviour
     {
-        private Assets._Source.Core.RecourceBank bank = new Assets._Source.Core.RecourceBank();
+        [SerializeField] Assets._Source.Core.RecourceBank bank;// = new Assets._Source.Core.RecourceBank();
         private void Awake()
         {
             bank.resources.Add(Assets._Source.Core.GameResource.Humans, new Assets._Source.Core.ObservableInt(10));

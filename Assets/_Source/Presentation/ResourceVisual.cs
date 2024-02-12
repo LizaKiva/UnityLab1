@@ -9,9 +9,9 @@ namespace Assets._Source.Presentation
 {
     public class ResourceVisual : MonoBehaviour
     {
-        public Assets._Source.Core.GameResource resourceType;
-        public Assets._Source.Core.RecourceBank resourceBank;
-        public Text text;
+        [SerializeField] Assets._Source.Core.GameResource resourceType;
+        [SerializeField] Assets._Source.Core.RecourceBank resourceBank;
+        [SerializeField] Text text;
 
         void Start()
         {
@@ -32,7 +32,7 @@ namespace Assets._Source.Presentation
 
         void UpdateText(int value)
         {
-            text.text = $"{resourceType}: {value}";
+            text.text = $"{value}";
         }
     }
 }
