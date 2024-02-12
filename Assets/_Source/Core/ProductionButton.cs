@@ -40,12 +40,12 @@ namespace Assets._Source.Core
                 timer += Time.deltaTime;    
                 progressSlider.value = timer / productionBuilding.productionTime;
                 yield return null;
-                button.interactable = true;
             }
 
             bank.StartCoroutine(productionBuilding.ProductionResourceCoroutine());
             progressSlider.gameObject.SetActive(false); 
             isProducting = false;
+            button.interactable = true;
         }
     }
 }
