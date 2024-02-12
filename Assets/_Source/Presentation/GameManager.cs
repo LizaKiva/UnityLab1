@@ -14,6 +14,11 @@ namespace Assets._Source.Presentation
             bank.resources.Add(Assets._Source.Core.GameResource.Wood, new Assets._Source.Core.ObservableInt(5));
             bank.resources.Add(Assets._Source.Core.GameResource.Stone, new Assets._Source.Core.ObservableInt(0));
             bank.resources.Add(Assets._Source.Core.GameResource.Gold, new Assets._Source.Core.ObservableInt(0));
+            bank.resources.Add(Assets._Source.Core.GameResource.HumansProdLvl, new Assets._Source.Core.ObservableInt(1));
+            bank.resources.Add(Assets._Source.Core.GameResource.FoodProdLvl, new Assets._Source.Core.ObservableInt(1));
+            bank.resources.Add(Assets._Source.Core.GameResource.WoodProdLvl, new Assets._Source.Core.ObservableInt(1));
+            bank.resources.Add(Assets._Source.Core.GameResource.StoneProdLvl, new Assets._Source.Core.ObservableInt(1));
+            bank.resources.Add(Assets._Source.Core.GameResource.GoldProdLvl, new Assets._Source.Core.ObservableInt(1));
         }
     }
 }
