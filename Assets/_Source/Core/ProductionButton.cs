@@ -8,14 +8,18 @@ namespace Assets._Source.Core
     public class ProductionButton : MonoBehaviour
     {
         [SerializeField] Assets._Source.Core.ProductionBuilding productionBuilding;
+        [SerializeField] Assets._Source.Core.GameResource gameResource;
         [SerializeField] Slider progressSlider;
         [SerializeField] Assets._Source.Core.RecourceBank bank;
         [SerializeField] Button button;
         private bool isProducting = false;
+        private float time;
 
         public void Start()
         {
             progressSlider.gameObject.SetActive(false);
+            time  = productionBuilding.productionTime;
+            Debug.Log("Start: " + time);
         }
 
         public void StartProduction()
@@ -46,6 +50,13 @@ namespace Assets._Source.Core
             progressSlider.gameObject.SetActive(false); 
             isProducting = false;
             button.interactable = true;
+        }
+
+        public void LvlUp()
+        {
+            Debug.Log("Click: " + time);
+            bank.ChangeRecources(gameResource, 10);
+            productionBuilding.productionTime = time * (1f - (float)bank.resources[gameResource].Value / 100f);
         }
     }
 }
