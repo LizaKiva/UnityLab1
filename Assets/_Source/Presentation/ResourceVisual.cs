@@ -32,7 +32,7 @@ namespace Assets._Source.Presentation
 
         void UpdateText(int value)
         {
-            text.text = $"{resourceType}: {value}";
+            text.text = $"{value}";
         }
     }
 }
